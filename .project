@@ -1,0 +1,23 @@
+<projectDescription>
+  <name>hbase</name>
+  <comment>HBase is the &amp;lt;a href=&quot;http://hadoop.apache.org&quot;&amp;rt;Hadoop&lt;/a&amp;rt; database. Use it when you need
+    random, realtime read/write access to your Big Data.
+    This project&apos;s goal is the hosting of very large tables -- billions of rows X millions of columns -- atop clusters
+    of commodity hardware. NO_M2ECLIPSE_SUPPORT: Project files created with the maven-eclipse-plugin are not supported in M2Eclipse.</comment>
+  <projects/>
+  <buildSpec>
+    <buildCommand>
+      <name>org.jamon.project.templateBuilder</name>
+    </buildCommand>
+    <buildCommand>
+      <name>org.eclipse.jdt.core.javabuilder</name>
+    </buildCommand>
+    <buildCommand>
+      <name>org.jamon.project.markerUpdater</name>
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>org.eclipse.jdt.core.javanature</nature>
+    <nature>org.jamon.project.jamonnature</nature>
+  </natures>
+</projectDescription>

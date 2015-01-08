@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <property location="/home/agung/Desktop/hbase-0.94.1/target/hbase-webapps" name="build.webapps"/>
+  <property location="/home/agung/Desktop/hbase-0.94.1/src/main/resources/hbase-webapps" name="src.webapps"/>
+  <property location="/home/agung/Desktop/hbase-0.94.1/target/generated-sources" name="generated.sources"/>
+  <mkdir dir="${build.webapps}"/>
+  <copy todir="${build.webapps}">
+    <fileset dir="${src.webapps}">
+      <exclude name="**/*.jsp"/>
+      <exclude name="**/.*"/>
+      <exclude name="**/*~"/>
+    </fileset>
+  </copy>
+  <taskdef classname="org.apache.jasper.JspC" name="jspcompiler" classpathref="maven.compile.classpath"/>
+  <mkdir dir="${build.webapps}/master/WEB-INF"/>
+  <jspcompiler uriroot="${src.webapps}/master" package="org.apache.hadoop.hbase.generated.master" webxml="${build.webapps}/master/WEB-INF/web.xml" outputdir="${generated.sources}/java"/>
+  <mkdir dir="${build.webapps}/regionserver/WEB-INF"/>
+  <jspcompiler uriroot="${src.webapps}/regionserver" package="org.apache.hadoop.hbase.generated.regionserver" webxml="${build.webapps}/regionserver/WEB-INF/web.xml" outputdir="${generated.sources}/java"/>
+  <exec executable="sh">
+    <arg line="/home/agung/Desktop/hbase-0.94.1/src/saveVersion.sh 0.94.1 ${generated.sources}/java"/>
+  </exec>
+</target>
+</project>
