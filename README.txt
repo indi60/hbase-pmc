@@ -1,3 +1,8 @@
+This project is base on Apache Hbase 0.94.1. 
+I am trying to doing experiment to extract from the source codes to model checker.
+
+===================================================================================================================
+
 Apache HBase [1] is an open-source, distributed, versioned, column-oriented
 store modeled after Google' Bigtable: A Distributed Storage System for
 Structured Data by Chang et al.[2]  Just as Bigtable leverages the distributed
